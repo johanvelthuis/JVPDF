@@ -2,10 +2,10 @@
 /vendor/
 
 # Ignore Composer files
-composer.lock
+/composer.lock
 
 # Ignore system files
-.DS_Store
+/.DS_Store
 /.idea/
 /*.log
 
