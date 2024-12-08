@@ -1,0 +1,12 @@
+# Ignore vendor directory
+/vendor/
+
+# Ignore Composer files
+composer.lock
+
+# Ignore system files
+.DS_Store
+.idea/
+/*.log
+
+
