@@ -1,0 +1,24 @@
+{
+    "name": "johanvelthuis/jvpdf",
+    "version": "0.1.0",
+    "description": "PDF Extensions and Utilities for generating PDFs easier with PHP",
+    "type": "library",
+    "require": {
+        "setasign/fpdi": "^v2.6.1",
+        "tecnickcom/tcpdf": "6.7.7"
+    },
+    "repositories": [
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "johanvelthuis\\JVPdf\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Johan Velthuis",
+            "email": "info@jv.nl"
+        }
+    ]
+}

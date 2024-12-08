@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="johanvelthuis\JVPdf\" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/laminas/laminas-memory" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/laminas/laminas-stdlib" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/setasign/fpdf" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/setasign/fpdi" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/setasign/fpdi-fpdf" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nmiles/laminas-pdf" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tecnickcom/tc-lib-barcode" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tecnickcom/tc-lib-color" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tecnickcom/tc-lib-file" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tecnickcom/tc-lib-pdf" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tecnickcom/tc-lib-pdf-encrypt" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tecnickcom/tc-lib-pdf-font" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tecnickcom/tc-lib-pdf-graph" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tecnickcom/tc-lib-pdf-image" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tecnickcom/tc-lib-pdf-page" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tecnickcom/tc-lib-unicode" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tecnickcom/tc-lib-unicode-data" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tecnickcom/tcpdf" />
+    </content>
+    <content url="file://$MODULE_DIR$/../LaminasPdf">
+      <sourceFolder url="file://$MODULE_DIR$/../LaminasPdf/src" isTestSource="false" packagePrefix="LaminasPdf\" />
+      <sourceFolder url="file://$MODULE_DIR$/../LaminasPdf/test" isTestSource="true" packagePrefix="LaminasPdfTest\" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/laminas/laminas-coding-standard" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/laminas/laminas-memory" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/laminas/laminas-stdlib" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/laminas/laminas-zendframework-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/myclabs/deep-copy" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/nikic/php-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/phar-io/manifest" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/phar-io/version" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/phpunit/php-code-coverage" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/phpunit/php-file-iterator" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/phpunit/php-invoker" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/phpunit/php-text-template" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/phpunit/php-timer" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/phpunit/phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/sebastian/cli-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/sebastian/code-unit" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/sebastian/code-unit-reverse-lookup" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/sebastian/comparator" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/sebastian/complexity" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/sebastian/diff" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/sebastian/environment" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/sebastian/exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/sebastian/global-state" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/sebastian/lines-of-code" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/sebastian/object-enumerator" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/sebastian/object-reflector" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/sebastian/recursion-context" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/sebastian/resource-operations" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/sebastian/type" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/sebastian/version" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/squizlabs/php_codesniffer" />
+      <excludeFolder url="file://$MODULE_DIR$/../LaminasPdf/vendor/theseer/tokenizer" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
