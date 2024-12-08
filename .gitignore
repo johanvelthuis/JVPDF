@@ -6,6 +6,6 @@ composer.lock
 
 # Ignore system files
 .DS_Store
-.idea/
+/.idea/
 /*.log
 
