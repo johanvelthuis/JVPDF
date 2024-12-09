@@ -13,6 +13,8 @@ class JVPDF {
 	
 	protected static $fontCache = [];
 	
+	protected $css = null;
+	
 	/**
 	 * @var \JVelthuis\JVPdf\Unit
 	 */
@@ -49,6 +51,14 @@ class JVPDF {
 	public function setTitle(string $title){
 		$this->title = $title;
 		$this->pdf->setTitle($title);
+	}
+	
+	public function setCssPath(string $cssPath){
+		if(file_exists($cssPath)){
+			$this->css = file_get_contents($cssPath);
+		}else{
+			throw new \Exception('CssPath niet gevonden: '.$cssPath);
+		}
 	}
 	
 	
@@ -376,6 +386,16 @@ class JVPDF {
 	
 	public function Line(float $x, float $y, float $w = 0, float $h = 0, $style = []):JVPDF{
 		$this->pdf->Line($x, $y, $w, $h, $style);
+		return $this;
+	}
+	
+	public function WriteHtml($html, $ln = true, $fill = false, $reseth = false, $cell = false, $align = ''):JVPDF {
+		$content = "<style>";
+		if(isset($this->css)){
+			$content .= $this->css;
+		}
+		$content .= "</style>{$html}";
+		$this->pdf->WriteHTML($content, $ln, $fill, $reseth, $cell, $align);
 		return $this;
 	}
 }
