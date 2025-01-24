@@ -92,16 +92,21 @@ class JVPDF {
 	 * @throws \setasign\Fpdi\PdfReader\PdfReaderException
 	 */
 	private static function _load(string $path, Fpdi $pdf, $startIndex = 1, $endIndex = 100000):?string{
+		
+		
 		$pageCount = $pdf->setSourceFile($path);
+		error_log("_load: pageCount: $pageCount");
 		$firstTemplateId = null;
 		
 		for($i = 1;$i <= $pageCount;$i++){
+			error_log("$i, $startIndex, $endIndex");
 			if($startIndex <= $i && $endIndex >= $i){
 				$tplIdx = $pdf->importPage($i);
 				if(!isset($firstTemplateId)){
 					$firstTemplateId = $tplIdx;
 				}
 				$pdf->AddPage();
+				error_log("$i");
 				$pdf->useTemplate($tplIdx);
 			}
 		}
@@ -109,14 +114,16 @@ class JVPDF {
 		return $firstTemplateId;
 	}
 	
-	
-	
-	
 	public function merge($path, $startIndex = null, $endIndex = null):int{
+		if(!isset($startIndex)){
+			$startIndex = 1;
+		}
+		if(!isset($endIndex)){
+			$endIndex = 10000;
+		}
 		$pagesBefore = $this->pdf->getNumPages();
 		static::_load($path, $this->pdf, $startIndex, $endIndex);
 		$pagesAfter = $this->pdf->getNumPages();
-		
 		return $pagesAfter - $pagesBefore;
 	}
 	
@@ -379,9 +386,27 @@ class JVPDF {
 		return $this;
 	}
 	
-	public function SetXY(int $x, int $y):JVPDF {
+	public function SetXY(float $x, float $y):JVPDF {
 		$this->pdf->SetXY($x, $y);
 		return $this;
+	}
+	
+	public function SetX(float $x){
+		$this->pdf->SetX($x);
+		return $this;
+	}
+	
+	public function SetY(float $y){
+		$this->pdf->SetY($y);
+		return $this;
+	}
+	
+	public function GetX():float{
+		return $this->pdf->GetX();
+	}
+	
+	public function GetY():float{
+		return $this->pdf->GetY();
 	}
 	
 	public function Line(float $x, float $y, float $w = 0, float $h = 0, $style = []):JVPDF{
