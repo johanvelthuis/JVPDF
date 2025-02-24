@@ -36,7 +36,9 @@ class JVPDF {
 	/**
 	 * @var string Unique Identifier voor template in TCPDF
 	 */
-	private $template;
+	public $template;
+	
+	public $useTemplateWithAddNewPage = true;
 	
 	
 	public function __construct(){
@@ -288,7 +290,9 @@ class JVPDF {
 	 */
 	public function setTemplate(string $templateId){
 		$this->template = $templateId;
-		$this->pdf->templateId = $templateId;
+		error_log("setTemplate: addPageFrom");
+		//$this->pdf->templateCallback = [$this, 'addPageFromTemplate'];
+		$this->pdf->wrapper = $this;
 	}
 	
 	
