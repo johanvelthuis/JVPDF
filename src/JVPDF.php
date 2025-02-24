@@ -2,7 +2,6 @@
 
 namespace JVelthuis\JVPdf;
 
-use \setasign\Fpdi\Tcpdf\Fpdi;
 use TCPDF_FONTS;
 
 enum JVPDF_PageSize {
@@ -95,18 +94,18 @@ class JVPDF {
 		
 		
 		$pageCount = $pdf->setSourceFile($path);
-		error_log("_load: pageCount: $pageCount");
+		//error_log("_load: pageCount: $pageCount");
 		$firstTemplateId = null;
 		
 		for($i = 1;$i <= $pageCount;$i++){
-			error_log("$i, $startIndex, $endIndex");
+			//error_log("$i, $startIndex, $endIndex");
 			if($startIndex <= $i && $endIndex >= $i){
 				$tplIdx = $pdf->importPage($i);
 				if(!isset($firstTemplateId)){
 					$firstTemplateId = $tplIdx;
 				}
 				$pdf->AddPage();
-				error_log("$i");
+				//error_log("$i");
 				$pdf->useTemplate($tplIdx);
 			}
 		}
@@ -289,6 +288,7 @@ class JVPDF {
 	 */
 	public function setTemplate(string $templateId){
 		$this->template = $templateId;
+		$this->pdf->templateId = $templateId;
 	}
 	
 	
