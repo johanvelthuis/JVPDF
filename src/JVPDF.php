@@ -106,7 +106,12 @@ class JVPDF {
 				if(!isset($firstTemplateId)){
 					$firstTemplateId = $tplIdx;
 				}
-				$pdf->AddPage();
+				$size = $pdf->getTemplateSize($tplIdx);
+				$width = $size['width'];
+				$height = $size['height'];
+				$orientation = ($width > $height) ? 'L' : 'P';
+				$pdf->AddPage($orientation, [$width, $height]);
+				
 				//error_log("$i");
 				$pdf->useTemplate($tplIdx);
 			}
