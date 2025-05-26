@@ -346,27 +346,27 @@ class JVPDF {
 	}
 	
 	
-	// Methode om een TTF-lettertype toe te voegen met caching
-	public function AddFont(string $fontPath):string{
-		$fontPath = Utility::absolutePath($fontPath);
-		
-		// Genereer een unieke sleutel op basis van het lettertypepad
-		$fontKey = md5($fontPath);
-		
-		// Controleer of het lettertype al in de cache zit
-		if(!isset(self::$fontCache[$fontKey])){
-			// Voeg het TTF-lettertype toe en verkrijg de interne naam
-			$fontName = TCPDF_FONTS::addTTFfont($fontPath);
-			if($fontName === false){
-				throw new \Exception("Kon het lettertype niet toevoegen: $fontPath");
-			}
-			// Sla de interne naam op in de cache
-			self::$fontCache[$fontKey] = $fontName;
-		}
-		
-		// Retourneer de interne naam van het lettertype
-		return $fontName;
-	}
+        // Methode om een TTF-lettertype toe te voegen met caching
+        public function AddFont(string $fontPath):string{
+                $fontPath = Utility::absolutePath($fontPath);
+
+                // Genereer een unieke sleutel op basis van het lettertypepad
+                $fontKey = md5($fontPath);
+
+                // Controleer of het lettertype al in de cache zit
+                if(!isset(self::$fontCache[$fontKey])){
+                        // Voeg het TTF-lettertype toe en verkrijg de interne naam
+                        $fontName = TCPDF_FONTS::addTTFfont($fontPath);
+                        if($fontName === false){
+                                throw new \Exception("Kon het lettertype niet toevoegen: $fontPath");
+                        }
+                        // Sla de interne naam op in de cache
+                        self::$fontCache[$fontKey] = $fontName;
+                }
+
+                // Retourneer de interne naam van het lettertype
+                return self::$fontCache[$fontKey];
+        }
 	
 	
 	/**
