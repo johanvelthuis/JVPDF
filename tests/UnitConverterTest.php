@@ -26,10 +26,17 @@ class UnitConverterTest extends TestCase
     {
         $pageSize = [200, 300];
 
-        $this->assertSame([10, 15], UnitConverter::convertCoordinates(10, 15, $pageSize, Unit::POINT, false));
-        $this->assertSame([10, 285], UnitConverter::convertCoordinates(10, 15, $pageSize, Unit::POINT, true));
+        $result = UnitConverter::convertCoordinates(10, 15, $pageSize, Unit::POINT, false);
+        $this->assertEqualsWithDelta(10.0, $result[0], 0.0001);
+        $this->assertEqualsWithDelta(15.0, $result[1], 0.0001);
+
+        $result = UnitConverter::convertCoordinates(10, 15, $pageSize, Unit::POINT, true);
+        $this->assertEqualsWithDelta(10.0, $result[0], 0.0001);
+        $this->assertEqualsWithDelta(285.0, $result[1], 0.0001);
 
         $pageSize = [595, 842];
-        $this->assertSame([72, 770], UnitConverter::convertCoordinates(25.4, 25.4, $pageSize, Unit::MM, true));
+        $result = UnitConverter::convertCoordinates(25.4, 25.4, $pageSize, Unit::MM, true);
+        $this->assertEqualsWithDelta(72.0, $result[0], 0.0001);
+        $this->assertEqualsWithDelta(770.0, $result[1], 0.0001);
     }
 }
