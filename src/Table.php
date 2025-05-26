@@ -6,6 +6,7 @@ use LaminasPdf\Color\Html;
 use LaminasPdf\Font;
 use LaminasPdf\Page as LaminasPage;
 use LaminasPdf\Font as LaminasFont;
+use LaminasPdf\Image;
 
 //---- ----//
 //jvFramework2
@@ -38,7 +39,7 @@ $table->render($page, $this->pdf);
 /**
  * Class PdfTable
  * Gebruik deze class om een eenvoudige tabel/kolommen/cellen structuur met tekst te maken voor
- * Zend_Pdf pages.
+ * LaminasPdf pages.
  */
 
 
@@ -297,7 +298,7 @@ class PdfTable {
 					$file = JV::tempFile('jpg');
 					$data = file_get_contents($pref->webSite.$afbeelding->getUrl($colWidth * 4));
 					file_put_contents($file, $data);
-					$image = Zend_Pdf_Image::imageWithPath($file);
+                                        $image = Image::imageWithPath($file);
 					$this->page->drawImage($image, $this->pointsX($xOffset), $this->pointsY($cellYOffset + 2 + $height - $row->rowHeight), $this->pointsX($xOffset + $colWidth), $this->pointsY($cellYOffset + 2 - $row->rowHeight));
 					
 					
