@@ -543,10 +543,10 @@ class PdfTableRow {
 	}
 	
 	
-	/**
-	 * Convinience functie zodat we gemakkelijk string cells achter elkaar kunnen opgeven.
-	 * @param $array string[]
-	 */
+        /**
+         * Convenience functie zodat we gemakkelijk string cells achter elkaar kunnen opgeven.
+         * @param $array string[]
+         */
 	public function addCells($array){
 		$cells = array();
 		foreach($array as $str){
