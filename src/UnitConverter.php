@@ -14,7 +14,7 @@ class UnitConverter
 	 * @param array $pageSize [width, height] in points
 	 * @param Unit $unit
 	 * @param bool $useTopLeftOrigin
-	 * @return array Converted coordinates as [x, y] in points
+         * @return float[] Converted coordinates as [x, y] in points
 	 */
 	public static function convertCoordinates(float $x, float $y, array $pageSize, Unit $unit, bool $useTopLeftOrigin): array
 	{
@@ -27,7 +27,7 @@ class UnitConverter
 			$y = $pageSize[1] - $y; // pageSize[1] = page height
 		}
 		
-		return [(int)$x, (int)$y];
+                return [$x, $y];
 	}
 	
 	/**
