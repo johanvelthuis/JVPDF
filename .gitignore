@@ -1,11 +1,12 @@
-# Ignore vendor directory
+# Ignore Mac system files
+.DS_Store
+
+# Ignore PhpStorm project settings
+.idea/
+
+# Ignore log files
+*.log
+
+# Composer dependencies
 /vendor/
-
-# Ignore Composer files
-/composer.lock
-
-# Ignore system files
-/.DS_Store
-/.idea/
-/*.log
-
+composer.lock
