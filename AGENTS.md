@@ -6,14 +6,13 @@ This project contains a PHP library with tests located under the `tests/` direct
 De tests werken nog niet, dus dit gaan we later pas doen, als de environment helemaal goed is.
 1. Install dependencies with Composer:
    ```bash
-   #composer install #this is already in the setup script
+   composer install 
    ```
 2. Execute the test suite:
    ```bash
-   #phpunit tests/UnitConverterTest.php
+   phpunit tests
    ```
-   Running this command should execute `tests/UnitConverterTest.php` along with any other tests in the folder.
-
+  
 ## Coding style
 - The code base uses tabs for indentation.
 - New tests should be placed in the `tests/` directory following the existing naming conventions.
