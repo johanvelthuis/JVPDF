@@ -4,10 +4,7 @@ This project contains a PHP library with tests located under the `tests/` direct
 
 ## Running the tests
 De tests werken nog niet, dus dit gaan we later pas doen, als de environment helemaal goed is.
-1. Install dependencies with Composer:
-   ```bash
-   composer install 
-   ```
+
 2. Execute the test suite:
    ```bash
    phpunit tests
