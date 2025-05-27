@@ -2,20 +2,8 @@
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-
-//TCPDF Example 61 gaat over XHTML + CSS met fontkeuze.
-//TCPDF kan ook met html tables doen.
 // create new PDF document
-//$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
-
-$pdf = new \setasign\Fpdi\Tcpdf\Fpdi();
-$pageCount = $pdf->setSourceFile('template.pdf');
-$tplIdx = $pdf->importPage(1);
-$pdf->AddPage();
-$pdf->useTemplate($tplIdx);
-
-$pdf->setSourceFile('img/logo.pdf');
-$logoIdx = $pdf->importPage(1);
+$pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // set document information
 $pdf->setCreator(PDF_CREATOR);
@@ -69,7 +57,7 @@ $pdf->SetFont('impact', '', 24);
 
 // Add a page
 // This method has several options, check the source code documentation for more information.
-//$pdf->AddPage();
+$pdf->AddPage();
 
 // set text shadow effect
 $pdf->setTextShadow(array('enabled'=>true, 'depth_w'=>0.2, 'depth_h'=>0.2, 'color'=>array(196,196,196), 'opacity'=>1, 'blend_mode'=>'Normal'));
@@ -86,22 +74,19 @@ EOD;
 // Print text using writeHTMLCell()
 $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
 
+
+$width = $pdf->GetStringWidth('Hallo');
+
+$pdf->Write(10, "Hallo");
+
+$pdf->Line(PDF_MARGIN_LEFT,$pdf->GetY(), PDF_MARGIN_LEFT + $width, $pdf->GetY());
 $pdf->Image(__DIR__.'/img/rock-pianist.jpg', 50, 50, 150, '', 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false);
 $pdf->Image(__DIR__.'/img/transparent.png', 50, 50, 150, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
-
-$width = $pdf->GetStringWidth('Hallo, werkt dit ook met spaties.');
-$pdf->setY(200);
-$pdf->Write(10, "Hallo, werkt dit ook met spaties.");
-
-$pdf->Line(PDF_MARGIN_LEFT,$pdf->GetY() + 10, PDF_MARGIN_LEFT + $width, $pdf->GetY() + 10);
-
 // ---------------------------------------------------------
-$pdf->ImageSVG('img/logo.svg', 50, 200, 30,30);//??Zie ik nog niet. Maar misschien is de eps niet goed.
 
-$pdf->useTemplate($logoIdx, 100, 200, 50, 50, false);
 // Close and output PDF document
 // This method has several options, check the source code documentation for more information.
-$pdf->Output(__DIR__.'/example_001.pdf', 'F');
+$pdf->Output(__DIR__.'/output.pdf', 'F');
 
 //============================================================+
 // END OF FILE

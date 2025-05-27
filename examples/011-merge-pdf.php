@@ -13,7 +13,7 @@ $pdf->SetFont($fontImpact, 24);
 
 $pdf->pdf->Cell(50, 50, "Hallo Johan V");
 
-$pdf->merge("./attachment-2pages.pdf");
+$pdf->merge(__DIR__ . '/attachment-2pages.pdf');
 
 
 // Render the PDF to a file
