@@ -3,9 +3,7 @@
 This project contains a PHP library with tests located under the `tests/` directory.
 
 ## Running the tests
-De tests werken nog niet, dus dit gaan we later pas doen, als de environment helemaal goed is.
-
-2. Execute the test suite:
+1. Execute the test suite:
    ```bash
    phpunit tests
    ```
