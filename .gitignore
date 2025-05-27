@@ -10,3 +10,4 @@
 # Composer dependencies
 /vendor/
 composer.lock
+/.phpunit.result.cache
