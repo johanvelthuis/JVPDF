@@ -55,17 +55,21 @@ $pdf->pdf->WriteHTML($html);
 //Documentation:
 //https://tcpdf.org/examples/example_061/
 
+$url = __DIR__."/img/transparent.png";
+
 // create some HTML content
-$html = '<h1>Image alignments on HTML table</h1>
+$html = <<<"EOF"
+<h1>Image alignments on HTML table</h1>
 <table cellpadding="1" cellspacing="1" border="1" style="text-align:center;">
-<tr><td><img src="images/logo_example.png" border="0" height="41" width="41" /></td></tr>
-<tr style="text-align:left;"><td><img src="images/logo_example.png" border="0" height="41" width="41" align="top" /></td></tr>
-<tr style="text-align:center;"><td><img src="images/logo_example.png" border="0" height="41" width="41" align="middle" /></td></tr>
-<tr style="text-align:right;"><td><img src="images/logo_example.png" border="0" height="41" width="41" align="bottom" /></td></tr>
-<tr><td style="text-align:left;"><img src="images/logo_example.png" border="0" height="41" width="41" align="top" /></td></tr>
-<tr><td style="text-align:center;"><img src="images/logo_example.png" border="0" height="41" width="41" align="middle" /></td></tr>
-<tr><td style="text-align:right;"><img src="images/logo_example.png" border="0" height="41" width="41" align="bottom" /></td></tr>
-</table>';
+<tr><td><img src="$url" border="0" height="41" width="41" /></td></tr>
+<tr style="text-align:left;"><td><img src="$url" border="0" height="41" width="41" align="top" /></td></tr>
+<tr style="text-align:center;"><td><img src="$url" border="0" height="41" width="41" align="middle" /></td></tr>
+<tr style="text-align:right;"><td><img src="$url" border="0" height="41" width="41" align="bottom" /></td></tr>
+<tr><td style="text-align:left;"><img src="$url" border="0" height="41" width="41" align="top" /></td></tr>
+<tr><td style="text-align:center;"><img src="$url" border="0" height="41" width="41" align="middle" /></td></tr>
+<tr><td style="text-align:right;"><img src="$url" border="0" height="41" width="41" align="bottom" /></td></tr>
+</table>
+EOF;
 
 // output the HTML content
 $pdf->pdf->writeHTML($html, true, false, true, false, '');

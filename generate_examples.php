@@ -3,13 +3,23 @@
 $exampleDir = __DIR__ . '/examples';
 $exampleScripts = glob($exampleDir . '/[0-9][0-9][0-9]*.php');
 
+$force = false;
+if (isset($argv) && is_array($argv)) {
+	foreach ($argv as $arg) {
+		if ($arg === '--force' || $arg === '-f') {
+			$force = true;
+			break;
+		}
+	}
+}
+
 foreach ($exampleScripts as $script) {
-    $targetName = preg_replace('/\.php$/', '.pdf', basename($script));
-    $targetFile = $exampleDir . '/' . $targetName;
-    if (file_exists($targetFile)) {
-        echo "Skipping {$targetName}, already exists\n";
-        continue;
-    }
+	$targetName = preg_replace('/\.php$/', '.pdf', basename($script));
+	$targetFile = $exampleDir . '/' . $targetName;
+	if (!$force && file_exists($targetFile)) {
+		echo "Skipping {$targetName}, already exists\n";
+		continue;
+	}
 
 	$cmd = 'php ' . escapeshellarg($script);
 	$return = null;

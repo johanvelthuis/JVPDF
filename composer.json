@@ -4,8 +4,8 @@
     "description": "PDF Extensions and Utilities for generating PDFs easier with PHP",
     "type": "library",
     "require": {
-        "setasign/fpdi": "^v2.6.1",
-        "tecnickcom/tcpdf": "6.8.0"
+		"setasign/fpdi": "^v2.6.1",
+		"tecnickcom/tcpdf": "^6.10.0"
     },
     "repositories": [
     ],
