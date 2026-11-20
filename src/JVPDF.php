@@ -387,6 +387,15 @@ class JVPDF {
 		return $this;
 	}
 	
+	/**
+	 * Use a prepared transparent PDF for the supplied PNG bytes in Image() and HTML img tags.
+	 * Keep using the original PNG source and sizing; only its expensive alpha conversion changes.
+	 */
+	public function registerPngPdfFragment(string $imageData, string $pdfPath): static{
+		$this->pdf->registerPngPdfFragment($imageData, Utility::absolutePath($pdfPath));
+		return $this;
+	}
+
 	public function ImagePDF($path, $x = 0, $y = 0, $w = null, $h = null, $pageNumber = 1):JVPDF{
 		$path = Utility::absolutePath($path);
 		$this->pdf->setSourceFile($path);
